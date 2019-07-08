@@ -1,0 +1,41 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+  
+
+    <ion-title style="text-align: center">Employee Add </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label stacked> Name</ion-label>
+    <ion-input type="text" [(ngModel)]="employee.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked> Surname</ion-label>
+    <ion-input type="text" [(ngModel)]="employee.surname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked> Email</ion-label>
+    <ion-input type="text" [(ngModel)]="employee.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked> Gender</ion-label>
+    <ion-input type="text" [(ngModel)]="employee.gender"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked> Position</ion-label>
+    <ion-input type="text" [(ngModel)]="employee.position"></ion-input>
+  </ion-item>
+
+ 
+  <button ion-button class="btn-add" color="secondary" (click)="createEmployee()">Add Employee</button>
+
+</ion-content>

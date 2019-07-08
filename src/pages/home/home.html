@@ -1,14 +1,48 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary" style="text-align: center">
     <ion-title>
-      Ionic Blank
+     Employees  APP
     </ion-title>
   </ion-navbar>
+  <ion-searchbar
+
+   [hidden]="isHidden"
+   (ionChange)="getItems($event)"
+   (ionClear)="isCancel()"
+   >
+  
+  </ion-searchbar>
+
+
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-list>
+        <ion-item *ngFor="let employees of Employees">
+          <ion-avatar item-start >
+            <img src="../../assets/imgs/logo.png">
+          </ion-avatar>
+          <h2> {{ employees.name }} &nbsp;&nbsp;</h2>
+          <p> {{employees.surname}}-</p>
+
+          <button   (click)="viewEmp(employees.id)" ion-button clear item-end>  <ion-icon name="eye"></ion-icon></button>
+          <button   (click)="editEmployee(employees.id)" ion-button clear item-end>  <ion-icon name="create"></ion-icon></button>
+          <button   (click)="delete(employees.id)" ion-button clear item-end>  <ion-icon color="danger"  name="trash"></ion-icon></button>
+         
+        </ion-item>
+      </ion-list>
+ 
+
+  <ion-fab   bottom right>
+    <button ion-fab color="secondary"  >
+      <ion-icon name='apps'></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button (click)="addEmployee()" ion-fab><ion-icon  name="add"></ion-icon></button>
+      <button  (click)="showFilter()" ion-fab><ion-icon name="search"></ion-icon></button>
+      
+      
+    </ion-fab-list>
+  </ion-fab>
+
 </ion-content>

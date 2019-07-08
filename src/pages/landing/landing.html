@@ -1,0 +1,114 @@
+<!--
+  Generated template for the LandingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>landing</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-content padding>
+    <div class="container">
+     <div class="logo">
+       <h1>WELCOME</h1>
+      
+       <h2>A</h2><!-- LOGO -->
+     </div>
+       <!-- <h2 style="text-align: center;">Welcome to empApp</h2> -->
+       <div padding>
+       <ion-segment [(ngModel)]="user">
+         <ion-segment-button value="Login">
+           Login
+         </ion-segment-button>
+         <ion-segment-button value="Register">
+           Register
+         </ion-segment-button>
+       </ion-segment>
+     </div>
+   
+     <div [ngSwitch]="user">
+       
+          <ion-list *ngSwitchCase="'Login'">
+         <form [formGroup]="formgroup" (submit)="loginFunction()">
+         <ion-item>
+           <ion-label floating>Username</ion-label>
+           <ion-input type="text" formControlName="usernamel" [(ngModel)]="login.lUsername"></ion-input>
+         </ion-item>
+         
+         <ion-item *ngIf="usernamel.hasError('required') && usernamel.touched">
+             <p style="color: #f53d3d">*Name is Required</p>
+         </ion-item>
+      
+         
+   
+       
+         <ion-item>
+             <ion-label floating>Password</ion-label>
+             <ion-input type="Password" formControlName="passwordl" [(ngModel)]="login.lPassword"></ion-input>
+         </ion-item>
+         <ion-item *ngIf="passwordl.hasError('required') && passwordl.touched">
+             <p style="color: #f53d3d">*Password is Required</p>
+         </ion-item>
+        
+           <button id="fifi" ion-button color="secondary" block>Login</button>
+         </form>
+       </ion-list>
+       
+      
+   
+       <ion-list *ngSwitchCase="'Register'">
+       
+   
+   
+               <form [formGroup]="formgroup" (submit)="createUsers()">
+                 <ion-item>
+                   <ion-label floating>Username</ion-label>
+                   <ion-input type="text" formControlName="usernamer" [(ngModel)]="register.rUsername"></ion-input>
+                 </ion-item>
+                 
+                 <ion-item *ngIf="usernamer.hasError('required') && usernamer.touched">
+                     <p style="color: #f53d3d">*Name is Required</p>
+                 </ion-item>
+              
+                 <ion-item>
+                   <ion-label floating>Email address</ion-label>
+                   <ion-input type="email" formControlName="emailr" [(ngModel)]="register.rEmail"></ion-input>
+                 </ion-item>
+                 
+                 <ion-item *ngIf="emailr.hasError('required') && emailr.touched">
+                     <p style="color: #f53d3d">*Email address is Required</p>
+                 </ion-item>
+           
+               
+                 <ion-item>
+                     <ion-label floating>Password</ion-label>
+                     <ion-input type="Password" formControlName="passwordr" [(ngModel)]="register.rPassword"></ion-input>
+                 </ion-item>
+                 <ion-item *ngIf="passwordr.hasError('required') && passwordr.touched">
+                     <p style="color: #f53d3d">*Password is Required</p>
+                 </ion-item>
+   
+                 <ion-item>
+                   <ion-label floating>Confirm Password</ion-label>
+                   <ion-input type="Password" formControlName="confirmPasswordr"></ion-input>
+               </ion-item>
+               <ion-item *ngIf="confirmPasswordr.hasError('required') && confirmPasswordr.touched">
+                   <p style="color: #f53d3d">*Password is Required for confirmation</p>
+               </ion-item>
+                
+                   <button ion-button color="dark" type="submit" block>Register</button>
+                 </form>
+                 
+       </ion-list>
+     </div>
+     
+     </div> -->
+     
+   </ion-content>
+   
+</ion-content>
